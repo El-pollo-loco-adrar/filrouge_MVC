@@ -41,7 +41,14 @@
     </div>
     <hr>
                 <!--INSCRIPTION NEWSLETTER-->
-                <div class="newsLetter">
+
+        <?php
+            if (isset($_SESSION["message"])) {
+                echo '<p style="color:red;">' . $_SESSION["message"] . '</p>';
+                unset($_SESSION["message"]); // Efface le message après l'affichage
+            }
+        ?>
+    <div class="newsLetter">
         <p>Naissances, évènements ...</p>
         <p class="inscription">Inscrivez vous à notre newsLetter</p>
         <form action="#" method="post">

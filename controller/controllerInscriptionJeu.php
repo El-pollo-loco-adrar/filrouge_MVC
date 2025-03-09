@@ -1,14 +1,11 @@
 <?php
 
-// include "./view/jeu/header_jeu.php";
-// include "./view/jeu/view_inscriptionJeu.php";
-// include "./view/footer.php";
-
 class ControllerInscriptionJeu{
-    private ?ModelUser $modelUser;
     private ?ViewInscriptionJeu $viewInscriptionJeu;
+    private ?ModelUser $modelUser;
+    
 
-    public function __construct(ModelUser $modelUser, ViewInscriptionJeu $viewInscriptionJeu){
+    public function __construct(ViewInscriptionJeu $viewInscriptionJeu, ModelUser $modelUser){
         $this->modelUser = $modelUser;
         $this->viewInscriptionJeu = $viewInscriptionJeu;
         }    

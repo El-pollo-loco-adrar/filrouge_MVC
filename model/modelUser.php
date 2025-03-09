@@ -65,6 +65,8 @@ class ModelUser{
         $this->bdd = $bdd;
         return $this;
     }
+
+
     public function addUser(): string{
 
         try{
@@ -82,6 +84,23 @@ class ModelUser{
             return "$pseudo peut débuter son aventure";
         }catch(PDOException $e){
             return $e->getMessage();
+        }
+    }
+
+    public function addMailNewsletter($email) {
+        try{
+            $req= $this->getBdd()->prepare("SELECT email FROM newsletter WHERE email = ? LIMIT 1");
+            $email = $this->getEmail();
+
+            $req= $this->getBdd()->prepare("INSERT INTO newsletter(email) VALUES (?)");
+
+            // $email = $this->getEmail();
+
+            $req->bindParam(1, $email, PDO::PARAM_STR);
+
+            return $req->execute();
+        }catch(PDOException $e){
+            return false;
         }
     }
 

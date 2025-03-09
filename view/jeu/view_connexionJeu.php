@@ -30,7 +30,10 @@
 
         <!--CREATION DE COMPTE-->
     <div id="creation-compte">
-        <p>Je n'ai pas de compte? je m'en crée un <a href="controllerInscriptionJeu.php">ici.</a></p>
+        <p>Je n'ai pas de compte? je m'en crée un <a href="inscriptionJeu.php">ici.</a></p>
     </div>
 </div>
+
+
+
 

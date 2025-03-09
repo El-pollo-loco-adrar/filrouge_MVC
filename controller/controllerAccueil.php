@@ -1,6 +1,27 @@
 <?php
+session_start();
 
-    include "./view/header.php";
-    include "./view/view_accueil.php";
-    include "./view/footer.php";
+class ControllerAccueil{
+
+    private ?ModelUser $modelUser;
+
+    public function __construct(ModelUser $modelUser){
+        $this->modelUser = $modelUser;
+    }
+
+
+    public function getModelUser(): ?ModelUser {
+        return $this->modelUser;
+    }
+    public function setModelUser(?ModelUser $modelUser): self {
+        $this->modelUser = $modelUser;
+        return $this;
+    }
+
+    public function inscrireNewsletter() {
+        
+    }
+
+}
+
 ?>
